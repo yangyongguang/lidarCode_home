@@ -18,6 +18,16 @@ math.h
 iostream
 -
 
+../src/groundRemove/include/box_fitting.h
+array
+-
+vector
+-
+cloud.h
+../src/groundRemove/include/cloud.h
+param.h
+../src/groundRemove/include/param.h
+
 ../src/groundRemove/include/cloud.h
 iostream
 -
@@ -235,6 +245,8 @@ groundRemove/include/groundRemove.h
 ../src/qt/widgets/groundRemove/include/groundRemove.h
 groundRemove/include/component_clustering.h
 ../src/qt/widgets/groundRemove/include/component_clustering.h
+groundRemove/include/box_fitting.h
+../src/qt/widgets/groundRemove/include/box_fitting.h
 QTextEdit
 -
 QGraphicsView

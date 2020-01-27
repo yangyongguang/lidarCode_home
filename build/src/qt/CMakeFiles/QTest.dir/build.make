@@ -93,6 +93,7 @@ src/qt/QTest: src/qt/CMakeFiles/QTest.dir/build.make
 src/qt/QTest: src/qt/widgets/libqt_widgets.so
 src/qt/QTest: src/groundRemove/libgroundRemove.so
 src/qt/QTest: src/groundRemove/libcomponent_clustering.a
+src/qt/QTest: src/groundRemove/libbox_fitting.a
 src/qt/QTest: src/qt/viewer/libviewer.so
 src/qt/QTest: src/qt/utils/libobject.so
 src/qt/QTest: src/qt/drawables/libdrawable.so

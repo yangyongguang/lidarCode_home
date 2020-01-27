@@ -72,6 +72,14 @@ public:
     QLabel *label_5;
     QSpacerItem *horizontalSpacer_5;
     QCheckBox *lineCB;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_11;
+    QSpacerItem *horizontalSpacer_9;
+    QCheckBox *bboxCB;
+    QHBoxLayout *horizontalLayout_14;
+    QLabel *label_12;
+    QSpacerItem *horizontalSpacer_10;
+    QCheckBox *voxelCB;
     QHBoxLayout *horizontalLayout_11;
     QLabel *label_9;
     QSpacerItem *horizontalSpacer_7;
@@ -144,7 +152,7 @@ public:
         choose->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         layoutWidget_3 = new QWidget(choose);
         layoutWidget_3->setObjectName(QStringLiteral("layoutWidget_3"));
-        layoutWidget_3->setGeometry(QRect(0, 0, 271, 224));
+        layoutWidget_3->setGeometry(QRect(0, 0, 271, 280));
         verticalLayout_3 = new QVBoxLayout(layoutWidget_3);
         verticalLayout_3->setSpacing(5);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -289,6 +297,46 @@ public:
 
 
         verticalLayout_3->addLayout(horizontalLayout_9);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        label_11 = new QLabel(layoutWidget_3);
+        label_11->setObjectName(QStringLiteral("label_11"));
+
+        horizontalLayout_2->addWidget(label_11);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_9);
+
+        bboxCB = new QCheckBox(layoutWidget_3);
+        bboxCB->setObjectName(QStringLiteral("bboxCB"));
+
+        horizontalLayout_2->addWidget(bboxCB);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_2);
+
+        horizontalLayout_14 = new QHBoxLayout();
+        horizontalLayout_14->setSpacing(6);
+        horizontalLayout_14->setObjectName(QStringLiteral("horizontalLayout_14"));
+        label_12 = new QLabel(layoutWidget_3);
+        label_12->setObjectName(QStringLiteral("label_12"));
+
+        horizontalLayout_14->addWidget(label_12);
+
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_14->addItem(horizontalSpacer_10);
+
+        voxelCB = new QCheckBox(layoutWidget_3);
+        voxelCB->setObjectName(QStringLiteral("voxelCB"));
+
+        horizontalLayout_14->addWidget(voxelCB);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_14);
 
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setSpacing(6);
@@ -439,7 +487,7 @@ public:
         QObject::connect(DataIdxVSlider, SIGNAL(valueChanged(int)), DataIdxSBox, SLOT(setValue(int)));
         QObject::connect(DataIdxSBox, SIGNAL(valueChanged(int)), DataIdxVSlider, SLOT(setValue(int)));
 
-        infoTab->setCurrentIndex(1);
+        infoTab->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -458,10 +506,14 @@ public:
         clusterCB->setText(QApplication::translate("MainWindow", " cluster      ", 0));
         label_10->setText(QApplication::translate("MainWindow", "depthCluster", 0));
         depthClusterCB->setText(QApplication::translate("MainWindow", " cluster      ", 0));
-        label_4->setText(QApplication::translate("MainWindow", "             insert    ", 0));
+        label_4->setText(QApplication::translate("MainWindow", "           insert    ", 0));
         insertCB->setText(QApplication::translate("MainWindow", "    insert     ", 0));
-        label_5->setText(QApplication::translate("MainWindow", "                line     ", 0));
-        lineCB->setText(QApplication::translate("MainWindow", "     line       ", 0));
+        label_5->setText(QApplication::translate("MainWindow", "            line      ", 0));
+        lineCB->setText(QApplication::translate("MainWindow", "      line       ", 0));
+        label_11->setText(QApplication::translate("MainWindow", "          bbox     ", 0));
+        bboxCB->setText(QApplication::translate("MainWindow", "     bbox      ", 0));
+        label_12->setText(QApplication::translate("MainWindow", "        voxels     ", 0));
+        voxelCB->setText(QApplication::translate("MainWindow", "    voxels    ", 0));
         label_9->setText(QApplication::translate("MainWindow", "       gridNum    ", 0));
         infoTab->setTabText(infoTab->indexOf(choose), QApplication::translate("MainWindow", "\351\241\265", 0));
         label_6->setText(QApplication::translate("MainWindow", "paramID", 0));

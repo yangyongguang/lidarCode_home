@@ -47,7 +47,8 @@ public:
     void getClusterImg(cv::Mat & img);
 
     ///////////////////  use pcl ///////////////////////////
-    void makeClusteredCloud(PointCloud & clusterCloud);
+    // Ptr 是智能指针， 应该不需要自己释放
+    void makeClusteredCloud(PointCloud & clusterCloud, std::vector<Cloud::Ptr> & clusters);
 
     void insertCubeVec();
     inline std::vector<Rect2D> getRectVec() const {return rect2DVec;}

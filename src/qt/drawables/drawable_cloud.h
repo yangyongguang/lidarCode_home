@@ -49,4 +49,23 @@ private:
     std::vector<Rect2D> rectPosVec;
     float hightToGround;
 };
+
+// 可视化 BBox
+class DrawableBBox: public Drawable
+{
+public:
+    using Ptr = std::shared_ptr<DrawableBBox>;
+    explicit DrawableBBox(const std::vector<Cloud::Ptr> & posVec, bool drawZAxis = true);
+    void Draw() const override;
+
+    ~DrawableBBox() override {}    
+    static DrawableBBox::Prt FromCloud(
+                        const std::vector<Cloud::Ptr> & posVec, 
+                        bool drawZAxis = true);
+
+private:
+    std::vector<Cloud::Ptr> rectPosVec;
+    bool _drawZAxis;
+};
+
 #endif

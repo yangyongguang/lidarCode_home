@@ -76,7 +76,7 @@
            </font>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="choose">
            <property name="locale">
@@ -91,7 +91,7 @@
               <x>0</x>
               <y>0</y>
               <width>271</width>
-              <height>224</height>
+              <height>280</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -273,7 +273,7 @@
                <item>
                 <widget class="QLabel" name="label_4">
                  <property name="text">
-                  <string>             insert    </string>
+                  <string>           insert    </string>
                  </property>
                 </widget>
                </item>
@@ -304,7 +304,7 @@
                <item>
                 <widget class="QLabel" name="label_5">
                  <property name="text">
-                  <string>                line     </string>
+                  <string>            line      </string>
                  </property>
                 </widget>
                </item>
@@ -324,7 +324,69 @@
                <item>
                 <widget class="QCheckBox" name="lineCB">
                  <property name="text">
-                  <string>     line       </string>
+                  <string>      line       </string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="label_11">
+                 <property name="text">
+                  <string>          bbox     </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_9">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="bboxCB">
+                 <property name="text">
+                  <string>     bbox      </string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_14">
+               <item>
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>        voxels     </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_10">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="voxelCB">
+                 <property name="text">
+                  <string>    voxels    </string>
                  </property>
                 </widget>
                </item>

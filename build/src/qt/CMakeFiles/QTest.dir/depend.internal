@@ -3,6 +3,7 @@
 
 src/qt/CMakeFiles/QTest.dir/main.cpp.o
  ../src/groundRemove/include/bin.h
+ ../src/groundRemove/include/box_fitting.h
  ../src/groundRemove/include/cloud.h
  ../src/groundRemove/include/component_clustering.h
  ../src/groundRemove/include/groundRemove.h

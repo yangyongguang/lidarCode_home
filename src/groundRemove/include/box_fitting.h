@@ -27,7 +27,7 @@ extern float tRatioMax;
 extern float minLenRatio;
 extern float tPtPerM3;
 
-void getBoundingBox(const vector<Cloud> & clusteredPoints,
-                    vector<Cloud>& bbPoints);
+void getBoundingBox(const vector<Cloud::Ptr> & clusteredPoints,
+                    vector<Cloud::Ptr> & bbPoints);
 
 #endif //MY_PCL_TUTORIAL_BOX_FITTING_H

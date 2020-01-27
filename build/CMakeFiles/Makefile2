@@ -1301,6 +1301,7 @@ src/qt/preinstall: src/qt/widgets/preinstall
 # Target rules for target src/qt/CMakeFiles/QTest.dir
 
 # All Build rule for target.
+src/qt/CMakeFiles/QTest.dir/all: src/groundRemove/CMakeFiles/box_fitting.dir/all
 src/qt/CMakeFiles/QTest.dir/all: src/groundRemove/CMakeFiles/component_clustering.dir/all
 src/qt/CMakeFiles/QTest.dir/all: src/groundRemove/CMakeFiles/cloud.dir/all
 src/qt/CMakeFiles/QTest.dir/all: src/groundRemove/CMakeFiles/segment.dir/all
@@ -1323,7 +1324,7 @@ all: src/qt/CMakeFiles/QTest.dir/all
 
 # Build rule for subdir invocation for target.
 src/qt/CMakeFiles/QTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyg/code/lidarCode/build/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyg/code/lidarCode/build/CMakeFiles 32
 	$(MAKE) -f CMakeFiles/Makefile2 src/qt/CMakeFiles/QTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yyg/code/lidarCode/build/CMakeFiles 0
 .PHONY : src/qt/CMakeFiles/QTest.dir/rule

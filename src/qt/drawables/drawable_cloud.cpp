@@ -94,3 +94,43 @@ DrawableRect::Prt DrawableRect::FromRectVec(const std::vector<Rect2D> & posVec, 
 {
     return std::make_shared<DrawableRect>(DrawableRect(posVec, z));
 }
+
+// -------------------------------------------------------------------------------------
+DrawableBBox::DrawableBBox(const std::vector<Cloud::Ptr> & posVec, bool drawZAxis)
+{
+    rectPosVec.assign(posVec.begin(), posVec.end());
+    _drawZAxis = drawZAxis;
+}
+
+void DrawableBBox::Draw() const
+{
+    glPushMatrix();
+    glColor3f(0.8f, 0.0f, 0.0f);
+    for (int iBBox = 0; iBBox < rectPosVec.size(); ++iBBox)
+    {
+        Cloud bboxPt = (*rectPosVec[iBBox]);
+        glBegin(GL_LINE_STRIP)
+        for (int idx = 0; idx < 4; ++idx)
+        {
+            glVertex3f(bboxPt[idx].x(), bboxPt[idx].y(), bboxPt[idx].z());
+        }
+        glEnd()
+        if (_drawZAxis)
+        {
+            glBegin(GL_LINE_STRIP);
+            for (int idx = 4; idx < 8;++idx)
+            {
+                glVertex3f(bboxPt[idx].x(), bboxPt[idx].y(), bboxPt[idx].z());
+            }
+            
+            glEnd();
+        }
+    }
+}
+
+DrawableBBox::Prt DrawableBBox::FromCloud(
+                        const std::vector<Cloud::Ptr> & posVec, 
+                        bool drawZAxis)
+{
+    return std::make_shared<DrawableBBox>(DrawableBBox(posVec, drawZAxis));    
+}

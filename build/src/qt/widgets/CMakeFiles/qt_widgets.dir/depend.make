@@ -261,6 +261,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/base_viewer_widget.cpp.o: /usr/include/
 src/qt/widgets/CMakeFiles/qt_widgets.dir/base_viewer_widget.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: ../src/groundRemove/include/bin.h
+src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: ../src/groundRemove/include/box_fitting.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: ../src/groundRemove/include/cloud.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: ../src/groundRemove/include/component_clustering.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: ../src/groundRemove/include/groundRemove.h
@@ -1159,6 +1160,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_base_viewer_widget.cpp.o: /usr/incl
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_base_viewer_widget.cpp.o: /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: ../src/groundRemove/include/bin.h
+src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: ../src/groundRemove/include/box_fitting.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: ../src/groundRemove/include/cloud.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: ../src/groundRemove/include/component_clustering.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: ../src/groundRemove/include/groundRemove.h

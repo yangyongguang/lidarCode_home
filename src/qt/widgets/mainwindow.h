@@ -24,6 +24,7 @@
 // groundRemove 的代码
 #include "groundRemove/include/groundRemove.h"
 #include "groundRemove/include/component_clustering.h"
+#include "groundRemove/include/box_fitting.h"
 
 #include <QTextEdit>
 

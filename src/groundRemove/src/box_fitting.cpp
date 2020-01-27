@@ -136,17 +136,18 @@ bool ruleBasedFilter(vector<Point2f> pcPoints, float maxZ, int numPoints)
         return isPromising;
 }
 
-void getBoundingBox(const vector<Cloud> & clusteredPoints,
-                    vector<Cloud>& bbPoints)
+void getBoundingBox(const vector<Cloud::Ptr> & clusteredPoints,
+                    vector<Cloud::Ptr>& bbPoints)
 {
-    for (int iCluster = 0; iCluster < clusteredPoints.size(); iCluster++){//遍历每个物体
+    for (int iCluster = 0; iCluster < clusteredPoints.size(); iCluster++)
+    {//遍历每个物体
       // Check lidar points number
-      if(clusteredPoints[iCluster].size() == 0)
+      if(clusteredPoints[iCluster]->size() == 0)
         continue;
 
         Mat m (picScale*roiM, picScale*roiM, CV_8UC1, Scalar(0));
-        float initPX = clusteredPoints[iCluster][0].x() + roiM/2;
-        float initPY = clusteredPoints[iCluster][0].y() + roiM/2;
+        float initPX = (*clusteredPoints[iCluster])[0].x() + roiM/2;
+        float initPY = (*clusteredPoints[iCluster])[0].y() + roiM/2;
         int initX = floor(initPX*picScale);
         int initY = floor(initPY*picScale);
         int initPicX = initX;
@@ -154,19 +155,19 @@ void getBoundingBox(const vector<Cloud> & clusteredPoints,
         int offsetInitX = roiM*picScale/2 - initPicX;
         int offsetInitY = roiM*picScale/2 - initPicY;
 
-        int numPoints = clusteredPoints[iCluster].size();
+        int numPoints = (*clusteredPoints[iCluster]).size();
         vector<Point> pointVec(numPoints);
         vector<Point2f> pcPoints(4);
         float minMx, minMy, maxMx, maxMy;
         float minM = 999; float maxM = -999; float maxZ = -99;
         // for center of gravity
         float sumX = 0; float sumY = 0;
-        for (int iPoint = 0; iPoint < clusteredPoints[iCluster].size(); iPoint++)
+        for (int iPoint = 0; iPoint < (*clusteredPoints[iCluster]).size(); iPoint++)
         {
             //遍历某个点云簇中的所有点
-            float pX = clusteredPoints[iCluster][iPoint].x();
-            float pY = clusteredPoints[iCluster][iPoint].y();
-            float pZ = clusteredPoints[iCluster][iPoint].z();
+            float pX = (*clusteredPoints[iCluster])[iPoint].x();
+            float pY = (*clusteredPoints[iCluster])[iPoint].y();
+            float pZ = (*clusteredPoints[iCluster])[iPoint].z();
             // cast (-15 < x,y < 15) into (0 < x,y < 30)
             float roiX = pX + roiM/2;
             float roiY = pY + roiM/2;
@@ -222,9 +223,9 @@ void getBoundingBox(const vector<Cloud> & clusteredPoints,
             for(int i = 0; i < ramPoints; i++)
             {
                 int pInd = randPoints(mt);
-                assert(pInd >= 0 && pInd < clusteredPoints[iCluster].size());
-                float xI = clusteredPoints[iCluster][pInd].x();
-                float yI = clusteredPoints[iCluster][pInd].y();
+                assert(pInd >= 0 && pInd < (*clusteredPoints[iCluster]).size());
+                float xI = (*clusteredPoints[iCluster])[pInd].x();
+                float yI = (*clusteredPoints[iCluster])[pInd].y();
 
                 // from equation of distance between line and point
                 float dist = abs(slope*xI-1*yI+maxMy-slope*maxMx)/sqrt(slope*slope + 1);
@@ -267,7 +268,7 @@ void getBoundingBox(const vector<Cloud> & clusteredPoints,
         }
 
         // make pcl cloud for 3d bounding box
-        Cloud oneBbox;
+        Cloud::Ptr oneBboxPtr(new Cloud);
         for(int pclH = 0; pclH < 2; pclH++)
         {//底面四个点,上面四个点
             for(int pclP = 0; pclP < 4; pclP++)
@@ -279,10 +280,10 @@ void getBoundingBox(const vector<Cloud> & clusteredPoints,
                     o.z() = -1.73;//车体坐标系下点云,地面高度估计为0.1m
                 else 
                     o.z() = maxZ;
-                oneBbox.emplace_back(o);
+                oneBboxPtr->emplace_back(o);
             }
         }
-        bbPoints[iCluster] = oneBbox;
+        bbPoints.emplace_back(oneBboxPtr);
     }
 }
 

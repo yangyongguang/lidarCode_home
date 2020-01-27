@@ -191,8 +191,17 @@ void cluster::getClusterImg(cv::Mat & img)
     img = res;
 }
 
-void cluster::makeClusteredCloud(PointCloud & clusterCloud)
+void cluster::makeClusteredCloud(PointCloud & clusterCloud, std::vector<Cloud::Ptr> & clusters)
 {
+    // 搜集聚类后的点云
+    clusters.clear();
+
+    for (int idx = 0; idx < numCluster; ++idx)
+    {
+        Cloud::Ptr cloudPtr(new Cloud);
+        clusters.emplace_back(cloudPtr);
+    }
+
     for (int idx = 0; idx <clusterCloud.size(); ++idx)
     {
         point point(clusterCloud[idx].x(), clusterCloud[idx].y(), clusterCloud[idx].z());
@@ -211,7 +220,16 @@ void cluster::makeClusteredCloud(PointCloud & clusterCloud)
 
         int clusterNum = grid[xI][yI];
         clusterCloud[idx].classID = clusterNum;
+        // 添加点云
+        // fprintf(stderr, "cluster size [%d]\n", clusters.size());
+        // fprintf(stderr, "clusterNum [%d]\n", clusterNum);
+        clusters[clusterNum - 1]->emplace_back(point);
     }
+
+    // for (int idx = 0; idx < numCluster; ++idx)
+    // {
+    //     fprintf(stderr, "clusterID[%d] --> [%d]\n", idx, clusters[idx]->size());
+    // }
 }
 
 

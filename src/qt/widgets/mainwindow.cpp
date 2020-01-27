@@ -83,6 +83,8 @@ MainWindow::MainWindow(QWidget *parent):
     ui->updatePB->setEnabled(false);
 
     ui->clusterCB->setChecked(true);
+    ui->voxelCB->setChecked(false);
+    ui->bboxCB->setChecked(false);
     // param adjust
     ui->paramDSB->setRange(-1000, 1000);
     ui->paramDSB->setSingleStep(0.1);
@@ -323,13 +325,27 @@ void MainWindow::onSliderMovedTo(int cloud_number)
     _viewer->Clear();
 
     std::vector<Rect2D> rect2DVec;
+    std::vector<Cloud::Ptr> clusters; 
+    std::vector<Cloud::Ptr> bboxPts; 
     if (ui->clusterCB->isChecked())
     {
         cluster.componentClustering();                  
         cluster.getClusterImg(visClusterImg);
-        cluster.makeClusteredCloud(*obstacle_cloud);
+        cluster.makeClusteredCloud(*obstacle_cloud, clusters);
         rect2DVec = cluster.getRectVec();
-        _viewer->AddDrawable(DrawableRect::FromRectVec(rect2DVec), "DrawAbleRect");
+        if (ui->voxelCB->isChecked())
+        {
+            _viewer->AddDrawable(DrawableRect::FromRectVec(rect2DVec), "DrawAbleRect");
+        }
+
+        // bbox 拟合
+
+        // 结束
+        if (ui->bboxCB->isChecked())
+        {
+            getBoundingBox(clusters, bboxPts);
+            
+        }
         infoTextEdit->append("number of cluster : " + QString::number(cluster.getNumCluster()));
         infoTextEdit->append("number of non-empty voxels : " + QString::number(rect2DVec.size()));
         moveCursorToEnd();
