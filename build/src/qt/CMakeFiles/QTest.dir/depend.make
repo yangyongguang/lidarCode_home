@@ -20,6 +20,7 @@ src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/qt/main.cpp
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QDebug
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QObject
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QPoint
+src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QRect
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QScopedPointer
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QString
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/qalgorithms.h
@@ -153,6 +154,7 @@ src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qv
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qwindowdefs.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qwindowdefs_win.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QApplication
+src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDesktopWidget
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDockWidget
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QFileDialog
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QGraphicsScene

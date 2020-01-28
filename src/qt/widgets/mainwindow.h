@@ -40,6 +40,9 @@
 #include <QDockWidget>
 #include <unordered_map>
 
+#include <QDesktopWidget>
+#include <QRect>
+
 namespace Ui {
 class MainWindow;
 }
@@ -82,6 +85,7 @@ private slots:
     // 重新显示， 当改变形式的时候
     void onUpdateShow();
     void onUpdateShow(int num);
+    void onUpdateShow(bool isFullScreen);
     void onUpdate();
 
     // 改变参数类型， 为了调整参数
@@ -130,6 +134,10 @@ private:
 
     // 创建要显示的 gird rect
     // std::vector<Rect2D> rect2DVec;
+public:
+    bool isFullScreen;
+    QRect subWindSize;
+signals:
+    void fullScreenSignals();
 };
-
 #endif // WIDGET_H

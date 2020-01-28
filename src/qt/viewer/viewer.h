@@ -20,7 +20,7 @@ class Viewer : public QGLViewer
     // Q_OBJECT  这里一定不能定义 Q_OBJECT 这个选项， 很容易报错、
     // 根据 depth_clustering 的逻辑来， 就不会报错
 public:
-    explicit Viewer(QWidget *parent = 0) : QGLViewer(parent) {}
+    explicit Viewer(QWidget *parent = 0) : QGLViewer(parent), isFullScreen(false) {}
     void AddDrawable(Drawable::Prt drawable, std::string  name = "null");
     void Clear();
     ~Viewer() override {}
@@ -38,10 +38,12 @@ protected:
     virtual void mousePressEvent(QMouseEvent *e);
     virtual void mouseMoveEvent(QMouseEvent *e);
     virtual void mouseReleaseEvent(QMouseEvent *e);
+    // virtual void mouseDoubleClickEvent(QMouseEvent *e);
 
     // 寻找我们点击的点
     // virtual void postSelection(const QPoint &point);
 
+    
 public:
     DrawSelectAbleCloud drawSelectableCloud;
     std::vector<int> selection;
@@ -64,7 +66,10 @@ private:
     // 可视化使用的
     // 调用的 drawSelectableCloud 的 objects 对象
     // 所以此处暂时不需要定义自己的 objects
-    // std::vector<Object::Ptr> objects;
+    // std::vector<Object::Ptr> objects
+    
+public:
+    bool isFullScreen;
 };
 #endif
 

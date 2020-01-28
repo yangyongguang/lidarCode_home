@@ -17,7 +17,8 @@
 MainWindow::MainWindow(QWidget *parent):
     // QWidget(parent),
     BaseViewerWidget(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    isFullScreen(false)
     // ui(new Ui::OpenGlFolderPlayer)
 {
     angle_threshold = 10;
@@ -43,6 +44,8 @@ MainWindow::MainWindow(QWidget *parent):
     connect(ui->paramDSB, SIGNAL(valueChanged(double)), this, SLOT(onParamSet()));
     connect(ui->clearSelectionPB, SIGNAL(released()), this, SLOT(onClearSelection()));
     connect(ui->girdNumSB, SIGNAL(valueChanged(int)), this, SLOT(onUpdateShow(int)));
+
+    connect(this, SIGNAL(fullScreenSignals()), this, SLOT(onUpdateShow()));
     // connect(ui->infoTab->curr
     // auto it = ui->infoTab->widget(0)->findChild<QRadioButton>("groundRB");
 
@@ -56,6 +59,7 @@ MainWindow::MainWindow(QWidget *parent):
     
     // ui->CloudViewer->setBackgroundColor(QColor(1.0f, 1.0f, 1.0f));    
     _viewer = ui->CloudViewer;
+    // connect(ui->CloudViewer, SIGNAL(fullScreen(bool)), this, SLOT(onUpdateShow(bool)));
     // fprintf(stderr, "_viewer = ui->CloudViewer;\n");
     _viewer->installEventFilter(this);
     _viewer->setAutoFillBackground(true);
@@ -149,15 +153,26 @@ MainWindow::~MainWindow()
     delete imgLabel;
 }
 
-void MainWindow::keyPressEvent(QKeyEvent *event) {
-  switch (event->key()) {
-    case Qt::Key_Right:
-      ui->DataIdxSBox->setValue(ui->DataIdxSBox->value() + 1);
-      break;
-    case Qt::Key_Left:
-      ui->DataIdxSBox->setValue(ui->DataIdxSBox->value() - 1);
-      break;
-  }
+void MainWindow::keyPressEvent(QKeyEvent *event) 
+{
+    fprintf(stderr, "key value [%d]\n", event->key());
+    switch (event->key())
+    {
+        case Qt::Key_Right:
+            ui->DataIdxSBox->setValue(ui->DataIdxSBox->value() + 1);
+            fprintf(stderr, "Key_Right pressed \n");
+            break;
+        case Qt::Key_Left:
+            ui->DataIdxSBox->setValue(ui->DataIdxSBox->value() - 1);
+            fprintf(stderr, "Key_Left pressed \n");
+            break;
+
+        case Qt::Key_1:
+            fprintf(stderr, "key 1 pressed\n");
+            isFullScreen = (isFullScreen == true) ? false : true;
+            onUpdate();
+            break;
+    }
 }
 
 void MainWindow::onOpenFolderToRead()
@@ -252,7 +267,7 @@ void MainWindow::onSliderMovedTo(int cloud_number)
     _cloud = utils::ReadKittiBinCloudByPath(file_name);
     infoTextEdit->append("read bin file from: " + QString::fromStdString(file_name));
     infoTextEdit->append("current frame is: " + QString::number(cloud_number));
-    moveCursorToEnd();
+    moveCursorToEnd();   
 
     // 添加点云显示
     // _viewer->Clear();
@@ -338,14 +353,13 @@ void MainWindow::onSliderMovedTo(int cloud_number)
             _viewer->AddDrawable(DrawableRect::FromRectVec(rect2DVec), "DrawAbleRect");
         }
 
-        // bbox 拟合
-
-        // 结束
+        // bbox 拟合 L-shape fitting
         if (ui->bboxCB->isChecked())
         {
             getBoundingBox(clusters, bboxPts);
-            
+            _viewer->AddDrawable(DrawableBBox::FromCloud(bboxPts, false));
         }
+
         infoTextEdit->append("number of cluster : " + QString::number(cluster.getNumCluster()));
         infoTextEdit->append("number of non-empty voxels : " + QString::number(rect2DVec.size()));
         moveCursorToEnd();
@@ -514,9 +528,33 @@ void MainWindow::onUpdateShow(int num)
 
 void MainWindow::onUpdate()
 {
+        // 是否全屏显示
+    if (isFullScreen)
+    {
+        // _viewer->setParent(0);
+        fprintf(stderr, "full Screen\n");
+        subWindSize = _viewer->geometry();
+        // QDesktopWidget *system_screen=QApplication::desktop();
+        // QRect desktop_screen = system_screen->screenGeometry();
+        _viewer->setWindowFlags(Qt::Dialog);
+        // _viewer->setFixedSize(desktop_screen.width(),desktop_screen.height());
+        // _viewer->showFullScreen();
+        _viewer->showMaximized();
+    }
+    else
+    {
+        _viewer->setWindowFlags(Qt::SubWindow);
+        // _viewer->setGeometry(subWindSize);
+        _viewer->showNormal();
+    }
+
     onSliderMovedTo(curr_data_idx);
 }
 
+void MainWindow::onUpdateShow(bool isFullScreen)
+{
+    onSliderMovedTo(curr_data_idx);
+}
 
 void MainWindow::onParamSet()
 {
@@ -578,5 +616,5 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     dockshow_depth_image->resize(depth_image->width(), depth_image->height());
     // int showImageGV_x = (ui->CloudViewer->width() - ui->showImageGV->width()) / 2;
     // ui->showImageGV->move(showImageGV_x, 0);
-
 }
+

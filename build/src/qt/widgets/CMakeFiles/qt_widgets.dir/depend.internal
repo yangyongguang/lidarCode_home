@@ -283,6 +283,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QLocale
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QObject
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QPoint
+ /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QRect
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QScopedPointer
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QString
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QUuid
@@ -431,6 +432,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QApplication
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QButtonGroup
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QCheckBox
+ /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDesktopWidget
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDockWidget
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDoubleSpinBox
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QFileDialog
@@ -1179,6 +1181,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QDebug
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QObject
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QPoint
+ /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QRect
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QScopedPointer
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QString
  /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/qalgorithms.h
@@ -1307,6 +1310,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o
  /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qvector2d.h
  /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qwindowdefs.h
  /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qwindowdefs_win.h
+ /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDesktopWidget
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDockWidget
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QFileDialog
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QGraphicsScene
@@ -1317,6 +1321,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QTextEdit
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QWidget
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qabstractscrollarea.h
+ /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qdesktopwidget.h
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qdialog.h
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qdockwidget.h
  /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qfiledialog.h

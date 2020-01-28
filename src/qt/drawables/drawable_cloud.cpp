@@ -105,24 +105,40 @@ DrawableBBox::DrawableBBox(const std::vector<Cloud::Ptr> & posVec, bool drawZAxi
 void DrawableBBox::Draw() const
 {
     glPushMatrix();
-    glColor3f(0.8f, 0.0f, 0.0f);
+    glColor3f(0.0f, 0.9f, 0.0f);
     for (int iBBox = 0; iBBox < rectPosVec.size(); ++iBBox)
     {
         Cloud bboxPt = (*rectPosVec[iBBox]);
-        glBegin(GL_LINE_STRIP)
+        glBegin(GL_LINE_STRIP);
         for (int idx = 0; idx < 4; ++idx)
         {
             glVertex3f(bboxPt[idx].x(), bboxPt[idx].y(), bboxPt[idx].z());
         }
-        glEnd()
+        glVertex3f(bboxPt[0].x(), bboxPt[0].y(), bboxPt[0].z());
+        glEnd();
         if (_drawZAxis)
         {
             glBegin(GL_LINE_STRIP);
             for (int idx = 4; idx < 8;++idx)
             {
                 glVertex3f(bboxPt[idx].x(), bboxPt[idx].y(), bboxPt[idx].z());
-            }
-            
+            } 
+            glVertex3f(bboxPt[4].x(), bboxPt[4].y(), bboxPt[4].z());           
+            glEnd();
+
+            // 绘制四边
+            glBegin(GL_LINES);
+            glVertex3f(bboxPt[0].x(), bboxPt[0].y(), bboxPt[0].z());
+            glVertex3f(bboxPt[4].x(), bboxPt[4].y(), bboxPt[4].z());
+
+            glVertex3f(bboxPt[1].x(), bboxPt[1].y(), bboxPt[1].z());
+            glVertex3f(bboxPt[5].x(), bboxPt[5].y(), bboxPt[5].z());
+
+            glVertex3f(bboxPt[2].x(), bboxPt[2].y(), bboxPt[2].z());
+            glVertex3f(bboxPt[6].x(), bboxPt[6].y(), bboxPt[6].z());
+
+            glVertex3f(bboxPt[3].x(), bboxPt[3].y(), bboxPt[3].z());
+            glVertex3f(bboxPt[7].x(), bboxPt[7].y(), bboxPt[7].z());           
             glEnd();
         }
     }

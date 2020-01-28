@@ -282,6 +282,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QLocale
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QObject
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QPoint
+src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QRect
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QScopedPointer
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QString
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QUuid
@@ -430,6 +431,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QApplication
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QButtonGroup
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QCheckBox
+src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDesktopWidget
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDockWidget
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDoubleSpinBox
 src/qt/widgets/CMakeFiles/qt_widgets.dir/mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QFileDialog
@@ -1178,6 +1180,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: ../src/qt/widgets
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QDebug
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QObject
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QPoint
+src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QRect
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QScopedPointer
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QString
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtCore/qalgorithms.h
@@ -1306,6 +1309,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qvector2d.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qwindowdefs.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtGui/qwindowdefs_win.h
+src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDesktopWidget
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QDockWidget
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QFileDialog
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QGraphicsScene
@@ -1316,6 +1320,7 @@ src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QTextEdit
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QWidget
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qabstractscrollarea.h
+src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qdesktopwidget.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qdialog.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qdockwidget.h
 src/qt/widgets/CMakeFiles/qt_widgets.dir/moc_mainwindow.cpp.o: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qfiledialog.h

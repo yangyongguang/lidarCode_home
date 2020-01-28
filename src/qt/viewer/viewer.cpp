@@ -191,6 +191,8 @@ void Viewer::endSelection(const QPoint &)
     selectionMode_ = NONE;
 }
 
+
+
 void Viewer::removeIdFromSelection(int id) 
 { 
     // selection.removeAll(id); 
@@ -248,6 +250,7 @@ void Viewer::getClickedPoint(double &x, double &y)
     x = (double)(selectedPoint.x);
     y = (double)(selectedPoint.y);
 }
+
 
 void Viewer::drawSelectionRectangle() const 
 {
