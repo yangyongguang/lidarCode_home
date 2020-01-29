@@ -56,6 +56,7 @@ class DrawableBBox: public Drawable
 public:
     using Ptr = std::shared_ptr<DrawableBBox>;
     explicit DrawableBBox(const std::vector<Cloud::Ptr> & posVec, bool drawZAxis = true);
+    
     void Draw() const override;
 
     ~DrawableBBox() override {}    

@@ -3,8 +3,10 @@
 
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/bin.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/box_fitting.h
+src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/box_type.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/cloud.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/component_clustering.h
+src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/convex_hull.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/groundRemove.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/param.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: ../src/groundRemove/include/pixel_coords.h
@@ -473,6 +475,7 @@ src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core.hpp
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core/affine.hpp
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core/base.hpp
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core/bufferpool.hpp
+src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core/core.hpp
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core/core_c.h
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core/cuda.hpp
 src/qt/CMakeFiles/QTest.dir/main.cpp.o: /usr/local/include/opencv2/core/cuda.inl.hpp

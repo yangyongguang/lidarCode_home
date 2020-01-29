@@ -105,19 +105,27 @@ DrawableBBox::DrawableBBox(const std::vector<Cloud::Ptr> & posVec, bool drawZAxi
 void DrawableBBox::Draw() const
 {
     glPushMatrix();
-    glColor3f(0.0f, 0.9f, 0.0f);
+    glLineWidth(2.0f);
+    // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); //指定混合函数
+    // glEnable(GL_BLEND);
+    // glDisable(GL_LIGHTING);
     for (int iBBox = 0; iBBox < rectPosVec.size(); ++iBBox)
     {
         Cloud bboxPt = (*rectPosVec[iBBox]);
-        glBegin(GL_LINE_STRIP);
+        glColor3f(0.4112f, 0.412f, 0.412f);
+        glBegin(GL_QUAD_STRIP);
+        std::array<int, 4> bottom = {1, 2, 0, 3};
         for (int idx = 0; idx < 4; ++idx)
         {
-            glVertex3f(bboxPt[idx].x(), bboxPt[idx].y(), bboxPt[idx].z());
+            glVertex3f(bboxPt[bottom[idx]].x(), 
+                        bboxPt[bottom[idx]].y(), 
+                        bboxPt[bottom[idx]].z());
         }
-        glVertex3f(bboxPt[0].x(), bboxPt[0].y(), bboxPt[0].z());
+        // glVertex3f(bboxPt[0].x(), bboxPt[0].y(), bboxPt[0].z());
         glEnd();
         if (_drawZAxis)
         {
+            glColor3f(0.80f, 0.745f, 0.448f);
             glBegin(GL_LINE_STRIP);
             for (int idx = 4; idx < 8;++idx)
             {
@@ -141,7 +149,40 @@ void DrawableBBox::Draw() const
             glVertex3f(bboxPt[7].x(), bboxPt[7].y(), bboxPt[7].z());           
             glEnd();
         }
+
+        /*
+        glBegin(GL_QUAD_STRIP);
+        std::array<int, 4> bottom = {1, 2, 0, 3};
+
+        for (auto it = bottom.begin(); it != bottom.end(); ++it)
+        {
+            glVertex3f(bboxPt[*it].x(), bboxPt[*it].y(), bboxPt[*it].z());
+        }
+        glEnd();
+
+        if (_drawZAxis)
+        {
+            std::array<int, 4> top = {5, 6, 4, 7};
+            std::array<int, 8> surround = {0, 4, 3, 7, 2, 6, 1, 5};
+            glBegin(GL_QUAD_STRIP);
+            for (auto it = top.begin(); it != top.end(); ++it)
+            {
+                glVertex3f(bboxPt[*it].x(), bboxPt[*it].y(), bboxPt[*it].z());
+            }
+            glEnd();           
+
+            glBegin(GL_QUAD_STRIP);
+            for (auto it = surround.begin(); it != surround.end(); ++it)
+            {
+                glVertex3f(bboxPt[*it].x(), bboxPt[*it].y(), bboxPt[*it].z());
+            }
+            glEnd(); 
+        }
+        */
     }
+
+    // glEnable(GL_LIGHTING);
+    // glDisable(GL_BLEND);
 }
 
 DrawableBBox::Prt DrawableBBox::FromCloud(

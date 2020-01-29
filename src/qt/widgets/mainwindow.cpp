@@ -296,10 +296,11 @@ void MainWindow::onSliderMovedTo(int cloud_number)
     // Cloud ground_cloud, obstacle_cloud;
     Cloud::Ptr cloudTmp(new Cloud);
     groundRemove.scanCallBack(*_cloud, *ground_cloud, *obstacle_cloud);
+    // fprintf(stderr, "------------------1\n");
     // 获取选择的 ID
     if (_viewer->selection.size())
     {
-        fprintf(stderr, "_viewer->selection has size :d\n", _viewer->selection.size());
+        fprintf(stderr, "_viewer->selection has size :%d\n", _viewer->selection.size());
         for (const int & elem : _viewer->selection)
         {
             cloudTmp->emplace_back((*obstacle_cloud)[elem]);
@@ -347,6 +348,7 @@ void MainWindow::onSliderMovedTo(int cloud_number)
         cluster.componentClustering();                  
         cluster.getClusterImg(visClusterImg);
         cluster.makeClusteredCloud(*obstacle_cloud, clusters);
+        // fprintf(stderr, "------------------2\n");
         rect2DVec = cluster.getRectVec();
         if (ui->voxelCB->isChecked())
         {
@@ -356,8 +358,12 @@ void MainWindow::onSliderMovedTo(int cloud_number)
         // bbox 拟合 L-shape fitting
         if (ui->bboxCB->isChecked())
         {
-            getBoundingBox(clusters, bboxPts);
-            _viewer->AddDrawable(DrawableBBox::FromCloud(bboxPts, false));
+            // getBoundingBox(clusters, bboxPts);
+            // getBBox(clusters, bboxPts);
+            // fprintf(stderr, "------------------3\n");
+            getOrientedBBox(clusters, bboxPts);
+            // fprintf(stderr, "------------------4\n");
+            _viewer->AddDrawable(DrawableBBox::FromCloud(bboxPts, true));
         }
 
         infoTextEdit->append("number of cluster : " + QString::number(cluster.getNumCluster()));

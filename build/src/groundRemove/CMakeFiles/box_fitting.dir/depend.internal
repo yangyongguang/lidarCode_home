@@ -3,7 +3,9 @@
 
 src/groundRemove/CMakeFiles/box_fitting.dir/src/box_fitting.cpp.o
  ../src/groundRemove/include/box_fitting.h
+ ../src/groundRemove/include/box_type.h
  ../src/groundRemove/include/cloud.h
+ ../src/groundRemove/include/convex_hull.h
  ../src/groundRemove/include/param.h
  /home/yyg/code/lidarCode/src/groundRemove/src/box_fitting.cpp
  /usr/include/eigen3/Eigen/Core
@@ -230,6 +232,7 @@ src/groundRemove/CMakeFiles/box_fitting.dir/src/box_fitting.cpp.o
  /usr/local/include/opencv2/core/affine.hpp
  /usr/local/include/opencv2/core/base.hpp
  /usr/local/include/opencv2/core/bufferpool.hpp
+ /usr/local/include/opencv2/core/core.hpp
  /usr/local/include/opencv2/core/core_c.h
  /usr/local/include/opencv2/core/cuda.hpp
  /usr/local/include/opencv2/core/cuda.inl.hpp

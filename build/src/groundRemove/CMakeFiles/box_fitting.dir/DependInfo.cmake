@@ -29,6 +29,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/yyg/code/lidarCode/build/src/groundRemove/CMakeFiles/convex_hull.dir/DependInfo.cmake"
   "/home/yyg/code/lidarCode/build/src/groundRemove/CMakeFiles/cloud.dir/DependInfo.cmake"
   )
 

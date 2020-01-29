@@ -108,6 +108,7 @@ src/qt/QTest: /usr/lib/x86_64-linux-gnu/libGLU.so
 src/qt/QTest: src/qt/utils/libutils.so
 src/qt/QTest: src/groundRemove/libbin.so
 src/qt/QTest: src/groundRemove/libsegment.so
+src/qt/QTest: src/groundRemove/libconvex_hull.a
 src/qt/QTest: /usr/local/lib/libopencv_dnn.so.3.4.0
 src/qt/QTest: /usr/local/lib/libopencv_ml.so.3.4.0
 src/qt/QTest: /usr/local/lib/libopencv_objdetect.so.3.4.0

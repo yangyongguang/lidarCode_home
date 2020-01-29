@@ -6,6 +6,9 @@
 #include "cloud.h"
 #include "param.h"
 
+#include "box_type.h"
+#include "convex_hull.h"
+
 using namespace std;
 
 
@@ -27,7 +30,16 @@ extern float tRatioMax;
 extern float minLenRatio;
 extern float tPtPerM3;
 
+// 图像做的
 void getBoundingBox(const vector<Cloud::Ptr> & clusteredPoints,
                     vector<Cloud::Ptr> & bbPoints);
+// 使用原始点做的
+void getBBox(const vector<Cloud::Ptr> & clusteredPoints,
+                    vector<Cloud::Ptr> & bbPoints);        
+// 论文
+// An Orientation Corrected Bounding Box Fit Based on the Convex Hull under Real Time Constraintes
+std::vector<Vertex> CloudToVertexs(const Cloud::Ptr & cloud, float & minZ, float & maxZ);
+void getOrientedBBox(const vector<Cloud::Ptr> & clusteredPoints,
+                    vector<Cloud::Ptr> & bbPoints);    
 
 #endif //MY_PCL_TUTORIAL_BOX_FITTING_H

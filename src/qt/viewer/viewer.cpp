@@ -21,6 +21,17 @@ void Viewer::Clear()
 
 void Viewer::draw() 
 {
+    // 绘制自车
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glLineWidth(1.0f);
+    glBegin(GL_LINE_STRIP);
+    glVertex3f(-2.5f, -1.4f, -1.73f);
+    glVertex3f(2.5f, -1.4f, -1.73f);
+    glVertex3f(2.5f, 1.4f, -1.73f);
+    glVertex3f(-2.5f, 1.4f, -1.73f);
+    glVertex3f(-2.5f, -1.4f, -1.73f);   
+    glEnd();
+    //
     // qDebug() << "window clicked .\n" << endl;
     // fprintf(stderr, "Viewer::draw()\n");
     glPointSize(4);

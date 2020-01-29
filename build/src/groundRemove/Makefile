@@ -67,17 +67,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -88,6 +77,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,79 +122,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/groundRemove/CMakeFiles/Text.dir/rule:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/Text.dir/rule
-.PHONY : src/groundRemove/CMakeFiles/Text.dir/rule
+src/groundRemove/CMakeFiles/groundRemove.dir/rule:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/groundRemove.dir/rule
+.PHONY : src/groundRemove/CMakeFiles/groundRemove.dir/rule
 
 # Convenience name for target.
-Text: src/groundRemove/CMakeFiles/Text.dir/rule
+groundRemove: src/groundRemove/CMakeFiles/groundRemove.dir/rule
 
-.PHONY : Text
+.PHONY : groundRemove
 
 # fast build rule for target.
-Text/fast:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/Text.dir/build.make src/groundRemove/CMakeFiles/Text.dir/build
-.PHONY : Text/fast
-
-# Convenience name for target.
-src/groundRemove/CMakeFiles/box_fitting.dir/rule:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/box_fitting.dir/rule
-.PHONY : src/groundRemove/CMakeFiles/box_fitting.dir/rule
-
-# Convenience name for target.
-box_fitting: src/groundRemove/CMakeFiles/box_fitting.dir/rule
-
-.PHONY : box_fitting
-
-# fast build rule for target.
-box_fitting/fast:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/box_fitting.dir/build.make src/groundRemove/CMakeFiles/box_fitting.dir/build
-.PHONY : box_fitting/fast
-
-# Convenience name for target.
-src/groundRemove/CMakeFiles/component_clustering.dir/rule:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/component_clustering.dir/rule
-.PHONY : src/groundRemove/CMakeFiles/component_clustering.dir/rule
-
-# Convenience name for target.
-component_clustering: src/groundRemove/CMakeFiles/component_clustering.dir/rule
-
-.PHONY : component_clustering
-
-# fast build rule for target.
-component_clustering/fast:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/component_clustering.dir/build.make src/groundRemove/CMakeFiles/component_clustering.dir/build
-.PHONY : component_clustering/fast
-
-# Convenience name for target.
-src/groundRemove/CMakeFiles/cloud.dir/rule:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/cloud.dir/rule
-.PHONY : src/groundRemove/CMakeFiles/cloud.dir/rule
-
-# Convenience name for target.
-cloud: src/groundRemove/CMakeFiles/cloud.dir/rule
-
-.PHONY : cloud
-
-# fast build rule for target.
-cloud/fast:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/cloud.dir/build.make src/groundRemove/CMakeFiles/cloud.dir/build
-.PHONY : cloud/fast
-
-# Convenience name for target.
-src/groundRemove/CMakeFiles/segment.dir/rule:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/segment.dir/rule
-.PHONY : src/groundRemove/CMakeFiles/segment.dir/rule
-
-# Convenience name for target.
-segment: src/groundRemove/CMakeFiles/segment.dir/rule
-
-.PHONY : segment
-
-# fast build rule for target.
-segment/fast:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/segment.dir/build.make src/groundRemove/CMakeFiles/segment.dir/build
-.PHONY : segment/fast
+groundRemove/fast:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/groundRemove.dir/build.make src/groundRemove/CMakeFiles/groundRemove.dir/build
+.PHONY : groundRemove/fast
 
 # Convenience name for target.
 src/groundRemove/CMakeFiles/bin.dir/rule:
@@ -212,19 +152,94 @@ bin/fast:
 .PHONY : bin/fast
 
 # Convenience name for target.
-src/groundRemove/CMakeFiles/groundRemove.dir/rule:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/groundRemove.dir/rule
-.PHONY : src/groundRemove/CMakeFiles/groundRemove.dir/rule
+src/groundRemove/CMakeFiles/segment.dir/rule:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/segment.dir/rule
+.PHONY : src/groundRemove/CMakeFiles/segment.dir/rule
 
 # Convenience name for target.
-groundRemove: src/groundRemove/CMakeFiles/groundRemove.dir/rule
+segment: src/groundRemove/CMakeFiles/segment.dir/rule
 
-.PHONY : groundRemove
+.PHONY : segment
 
 # fast build rule for target.
-groundRemove/fast:
-	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/groundRemove.dir/build.make src/groundRemove/CMakeFiles/groundRemove.dir/build
-.PHONY : groundRemove/fast
+segment/fast:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/segment.dir/build.make src/groundRemove/CMakeFiles/segment.dir/build
+.PHONY : segment/fast
+
+# Convenience name for target.
+src/groundRemove/CMakeFiles/component_clustering.dir/rule:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/component_clustering.dir/rule
+.PHONY : src/groundRemove/CMakeFiles/component_clustering.dir/rule
+
+# Convenience name for target.
+component_clustering: src/groundRemove/CMakeFiles/component_clustering.dir/rule
+
+.PHONY : component_clustering
+
+# fast build rule for target.
+component_clustering/fast:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/component_clustering.dir/build.make src/groundRemove/CMakeFiles/component_clustering.dir/build
+.PHONY : component_clustering/fast
+
+# Convenience name for target.
+src/groundRemove/CMakeFiles/box_fitting.dir/rule:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/box_fitting.dir/rule
+.PHONY : src/groundRemove/CMakeFiles/box_fitting.dir/rule
+
+# Convenience name for target.
+box_fitting: src/groundRemove/CMakeFiles/box_fitting.dir/rule
+
+.PHONY : box_fitting
+
+# fast build rule for target.
+box_fitting/fast:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/box_fitting.dir/build.make src/groundRemove/CMakeFiles/box_fitting.dir/build
+.PHONY : box_fitting/fast
+
+# Convenience name for target.
+src/groundRemove/CMakeFiles/convex_hull.dir/rule:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/convex_hull.dir/rule
+.PHONY : src/groundRemove/CMakeFiles/convex_hull.dir/rule
+
+# Convenience name for target.
+convex_hull: src/groundRemove/CMakeFiles/convex_hull.dir/rule
+
+.PHONY : convex_hull
+
+# fast build rule for target.
+convex_hull/fast:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/convex_hull.dir/build.make src/groundRemove/CMakeFiles/convex_hull.dir/build
+.PHONY : convex_hull/fast
+
+# Convenience name for target.
+src/groundRemove/CMakeFiles/Text.dir/rule:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/Text.dir/rule
+.PHONY : src/groundRemove/CMakeFiles/Text.dir/rule
+
+# Convenience name for target.
+Text: src/groundRemove/CMakeFiles/Text.dir/rule
+
+.PHONY : Text
+
+# fast build rule for target.
+Text/fast:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/Text.dir/build.make src/groundRemove/CMakeFiles/Text.dir/build
+.PHONY : Text/fast
+
+# Convenience name for target.
+src/groundRemove/CMakeFiles/cloud.dir/rule:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f CMakeFiles/Makefile2 src/groundRemove/CMakeFiles/cloud.dir/rule
+.PHONY : src/groundRemove/CMakeFiles/cloud.dir/rule
+
+# Convenience name for target.
+cloud: src/groundRemove/CMakeFiles/cloud.dir/rule
+
+.PHONY : cloud
+
+# fast build rule for target.
+cloud/fast:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/cloud.dir/build.make src/groundRemove/CMakeFiles/cloud.dir/build
+.PHONY : cloud/fast
 
 src/bin.o: src/bin.cpp.o
 
@@ -334,6 +349,33 @@ src/component_clustering.cpp.s:
 	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/component_clustering.dir/build.make src/groundRemove/CMakeFiles/component_clustering.dir/src/component_clustering.cpp.s
 .PHONY : src/component_clustering.cpp.s
 
+src/convex_hull.o: src/convex_hull.cpp.o
+
+.PHONY : src/convex_hull.o
+
+# target to build an object file
+src/convex_hull.cpp.o:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/convex_hull.dir/build.make src/groundRemove/CMakeFiles/convex_hull.dir/src/convex_hull.cpp.o
+.PHONY : src/convex_hull.cpp.o
+
+src/convex_hull.i: src/convex_hull.cpp.i
+
+.PHONY : src/convex_hull.i
+
+# target to preprocess a source file
+src/convex_hull.cpp.i:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/convex_hull.dir/build.make src/groundRemove/CMakeFiles/convex_hull.dir/src/convex_hull.cpp.i
+.PHONY : src/convex_hull.cpp.i
+
+src/convex_hull.s: src/convex_hull.cpp.s
+
+.PHONY : src/convex_hull.s
+
+# target to generate assembly for a file
+src/convex_hull.cpp.s:
+	cd /home/yyg/code/lidarCode/build && $(MAKE) -f src/groundRemove/CMakeFiles/convex_hull.dir/build.make src/groundRemove/CMakeFiles/convex_hull.dir/src/convex_hull.cpp.s
+.PHONY : src/convex_hull.cpp.s
+
 src/groundRemove.o: src/groundRemove.cpp.o
 
 .PHONY : src/groundRemove.o
@@ -422,15 +464,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... test"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... Text"
-	@echo "... box_fitting"
-	@echo "... component_clustering"
-	@echo "... cloud"
-	@echo "... segment"
-	@echo "... bin"
 	@echo "... groundRemove"
+	@echo "... bin"
+	@echo "... segment"
+	@echo "... component_clustering"
+	@echo "... box_fitting"
+	@echo "... convex_hull"
+	@echo "... Text"
+	@echo "... edit_cache"
+	@echo "... cloud"
+	@echo "... rebuild_cache"
 	@echo "... src/bin.o"
 	@echo "... src/bin.i"
 	@echo "... src/bin.s"
@@ -443,6 +486,9 @@ help:
 	@echo "... src/component_clustering.o"
 	@echo "... src/component_clustering.i"
 	@echo "... src/component_clustering.s"
+	@echo "... src/convex_hull.o"
+	@echo "... src/convex_hull.i"
+	@echo "... src/convex_hull.s"
 	@echo "... src/groundRemove.o"
 	@echo "... src/groundRemove.i"
 	@echo "... src/groundRemove.s"

@@ -486,69 +486,17 @@ ContinuousUpdate/fast:
 .PHONY : ContinuousUpdate/fast
 
 #=============================================================================
-# Target rules for targets named Text
+# Target rules for targets named groundRemove
 
 # Build rule for target.
-Text: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Text
-.PHONY : Text
+groundRemove: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 groundRemove
+.PHONY : groundRemove
 
 # fast build rule for target.
-Text/fast:
-	$(MAKE) -f src/groundRemove/CMakeFiles/Text.dir/build.make src/groundRemove/CMakeFiles/Text.dir/build
-.PHONY : Text/fast
-
-#=============================================================================
-# Target rules for targets named box_fitting
-
-# Build rule for target.
-box_fitting: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 box_fitting
-.PHONY : box_fitting
-
-# fast build rule for target.
-box_fitting/fast:
-	$(MAKE) -f src/groundRemove/CMakeFiles/box_fitting.dir/build.make src/groundRemove/CMakeFiles/box_fitting.dir/build
-.PHONY : box_fitting/fast
-
-#=============================================================================
-# Target rules for targets named component_clustering
-
-# Build rule for target.
-component_clustering: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 component_clustering
-.PHONY : component_clustering
-
-# fast build rule for target.
-component_clustering/fast:
-	$(MAKE) -f src/groundRemove/CMakeFiles/component_clustering.dir/build.make src/groundRemove/CMakeFiles/component_clustering.dir/build
-.PHONY : component_clustering/fast
-
-#=============================================================================
-# Target rules for targets named cloud
-
-# Build rule for target.
-cloud: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cloud
-.PHONY : cloud
-
-# fast build rule for target.
-cloud/fast:
-	$(MAKE) -f src/groundRemove/CMakeFiles/cloud.dir/build.make src/groundRemove/CMakeFiles/cloud.dir/build
-.PHONY : cloud/fast
-
-#=============================================================================
-# Target rules for targets named segment
-
-# Build rule for target.
-segment: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 segment
-.PHONY : segment
-
-# fast build rule for target.
-segment/fast:
-	$(MAKE) -f src/groundRemove/CMakeFiles/segment.dir/build.make src/groundRemove/CMakeFiles/segment.dir/build
-.PHONY : segment/fast
+groundRemove/fast:
+	$(MAKE) -f src/groundRemove/CMakeFiles/groundRemove.dir/build.make src/groundRemove/CMakeFiles/groundRemove.dir/build
+.PHONY : groundRemove/fast
 
 #=============================================================================
 # Target rules for targets named bin
@@ -564,17 +512,82 @@ bin/fast:
 .PHONY : bin/fast
 
 #=============================================================================
-# Target rules for targets named groundRemove
+# Target rules for targets named segment
 
 # Build rule for target.
-groundRemove: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 groundRemove
-.PHONY : groundRemove
+segment: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 segment
+.PHONY : segment
 
 # fast build rule for target.
-groundRemove/fast:
-	$(MAKE) -f src/groundRemove/CMakeFiles/groundRemove.dir/build.make src/groundRemove/CMakeFiles/groundRemove.dir/build
-.PHONY : groundRemove/fast
+segment/fast:
+	$(MAKE) -f src/groundRemove/CMakeFiles/segment.dir/build.make src/groundRemove/CMakeFiles/segment.dir/build
+.PHONY : segment/fast
+
+#=============================================================================
+# Target rules for targets named component_clustering
+
+# Build rule for target.
+component_clustering: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 component_clustering
+.PHONY : component_clustering
+
+# fast build rule for target.
+component_clustering/fast:
+	$(MAKE) -f src/groundRemove/CMakeFiles/component_clustering.dir/build.make src/groundRemove/CMakeFiles/component_clustering.dir/build
+.PHONY : component_clustering/fast
+
+#=============================================================================
+# Target rules for targets named box_fitting
+
+# Build rule for target.
+box_fitting: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 box_fitting
+.PHONY : box_fitting
+
+# fast build rule for target.
+box_fitting/fast:
+	$(MAKE) -f src/groundRemove/CMakeFiles/box_fitting.dir/build.make src/groundRemove/CMakeFiles/box_fitting.dir/build
+.PHONY : box_fitting/fast
+
+#=============================================================================
+# Target rules for targets named convex_hull
+
+# Build rule for target.
+convex_hull: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 convex_hull
+.PHONY : convex_hull
+
+# fast build rule for target.
+convex_hull/fast:
+	$(MAKE) -f src/groundRemove/CMakeFiles/convex_hull.dir/build.make src/groundRemove/CMakeFiles/convex_hull.dir/build
+.PHONY : convex_hull/fast
+
+#=============================================================================
+# Target rules for targets named Text
+
+# Build rule for target.
+Text: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Text
+.PHONY : Text
+
+# fast build rule for target.
+Text/fast:
+	$(MAKE) -f src/groundRemove/CMakeFiles/Text.dir/build.make src/groundRemove/CMakeFiles/Text.dir/build
+.PHONY : Text/fast
+
+#=============================================================================
+# Target rules for targets named cloud
+
+# Build rule for target.
+cloud: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cloud
+.PHONY : cloud
+
+# fast build rule for target.
+cloud/fast:
+	$(MAKE) -f src/groundRemove/CMakeFiles/cloud.dir/build.make src/groundRemove/CMakeFiles/cloud.dir/build
+.PHONY : cloud/fast
 
 #=============================================================================
 # Target rules for targets named QTest
@@ -691,13 +704,14 @@ help:
 	@echo "... ExperimentalSubmit"
 	@echo "... ContinuousStart"
 	@echo "... ContinuousUpdate"
-	@echo "... Text"
-	@echo "... box_fitting"
-	@echo "... component_clustering"
-	@echo "... cloud"
-	@echo "... segment"
-	@echo "... bin"
 	@echo "... groundRemove"
+	@echo "... bin"
+	@echo "... segment"
+	@echo "... component_clustering"
+	@echo "... box_fitting"
+	@echo "... convex_hull"
+	@echo "... Text"
+	@echo "... cloud"
 	@echo "... QTest"
 	@echo "... utils"
 	@echo "... object"
